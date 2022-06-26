@@ -1,3 +1,5 @@
 export default async function Screenshots(url: string): Promise<Response> {
-    return new Response(`${url} is where the image is located`);
+    const object = await BUCKET.get(url);
+    if (!object) return new Response(null, { status: 404 });
+    return new Response(object.body);
 }

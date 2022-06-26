@@ -2,6 +2,6 @@ export {};
 
 declare global {
     const BUCKET: R2Bucket;
-    const key: string;
+    const KEY: string;
     const WEBHOOK: string;
 }
